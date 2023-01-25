@@ -1,6 +1,4 @@
-package com.framework.study.member.repository;
-
-import com.framework.study.member.domain.Member;
+package com.framework.study.member;
 
 import java.util.HashMap;
 import java.util.Map;

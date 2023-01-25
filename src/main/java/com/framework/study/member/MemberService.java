@@ -1,6 +1,4 @@
-package com.framework.study.member.service;
-
-import com.framework.study.member.domain.Member;
+package com.framework.study.member;
 
 public interface MemberService {
 

@@ -1,20 +1,28 @@
 package com.framework.study;
 
-import com.framework.study.member.domain.Grade;
-import com.framework.study.member.domain.Member;
-import com.framework.study.member.service.MemberService;
-import com.framework.study.member.service.MemberServiceImpl;
+import com.framework.study.member.Grade;
+import com.framework.study.member.Member;
+import com.framework.study.member.MemberService;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
 
 public class MemberApp {
 
     public static void main(String[] args) {
-//        MemberService memberService = new MemberServiceImpl();
-//        Member member = new Member(1L, "memberA", Grade.VIP);
-//        memberService.join(member);
-//
-//        Member findMember = memberService.findMember(1L);
-//        System.out.println("member = " + member.getName());
-//        System.out.println("findMember = " + findMember.getName());
+//        AppConfig appConfig = new AppConfig();
+//        MemberService memberService = appConfig.memberService();
+
+        ApplicationContext applicationContext = new AnnotationConfigApplicationContext(AppConfig.class);
+
+        MemberService memberService = applicationContext.getBean("memberService", MemberService.class);
+
+        Member member = new Member(1L, "memberA", Grade.VIP);
+        memberService.join(member);
+
+        Member findMember = memberService.findMember(1L);
+        System.out.println("member = " + member.getName());
+        System.out.println("findMember = " + findMember.getName());
 
     }
 

@@ -1,6 +1,6 @@
 package com.framework.study.discount;
 
-import com.framework.study.member.domain.Member;
+import com.framework.study.member.Member;
 
 public interface DiscountPolicy {
 

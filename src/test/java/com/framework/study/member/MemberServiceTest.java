@@ -1,15 +1,19 @@
 package com.framework.study.member;
 
-import com.framework.study.member.domain.Grade;
-import com.framework.study.member.domain.Member;
-import com.framework.study.member.service.MemberService;
-import com.framework.study.member.service.MemberServiceImpl;
+import com.framework.study.AppConfig;
 import org.assertj.core.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 public class MemberServiceTest {
 
-    MemberService memberService = new MemberServiceImpl();
+    MemberService memberService;
+
+    @BeforeEach
+    public void beforeEach() {
+        AppConfig appConfig = new AppConfig();
+        this.memberService = appConfig.memberService();
+    }
 
     @Test
     void join() {
