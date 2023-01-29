@@ -1,10 +1,8 @@
 package com.framework.study.beanfind;
 
-import com.framework.study.AppConfig;
 import com.framework.study.discount.DiscountPolicy;
 import com.framework.study.discount.FixDiscountPolicy;
 import com.framework.study.discount.RateDiscountPolicy;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.NoUniqueBeanDefinitionException;
